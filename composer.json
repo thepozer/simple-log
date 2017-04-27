@@ -2,7 +2,7 @@
     "name": "thepozer/simple-log",
     "description": "Simple dated log system to use with Slim FrameWork v3",
     "type": "library",
-	"homepage": "https://github.com/thepozer/simple-view",
+	"homepage": "https://github.com/thepozer/simple-log",
     "license": "MIT",
     "authors": [
         {
@@ -15,7 +15,7 @@
     "minimum-stability": "stable",
 	"autoload": {
 		"psr-4": {
-			"Thepozer\\View\\": "src/"
+			"Thepozer\\Log\\": "src/"
 		}
 	}
 }

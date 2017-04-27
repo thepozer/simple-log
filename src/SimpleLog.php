@@ -1,5 +1,5 @@
 <?php
-namespace Thepozer\SimpleLog;
+namespace Thepozer\Log;
 
 /**
  * Classe logger avec datation des lignes
