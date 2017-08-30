@@ -41,7 +41,7 @@ class SimpleLog {
 		if (array_key_exists($sLogLevel, $this->arLevels)) {
 			$this->iLogLevel = $this->arLevels[$sLogLevel];
 		} else {
-			throw new Exception("Not defined Log level ....");
+			throw new \Exception("Not defined Log level ....");
 		}
 	}
     
@@ -156,7 +156,7 @@ class SimpleLog {
     public function log($sLevel, $sMessage, array $arContext = array()) {
 		if ($this->arLevels[$sLevel] <= $this->iLogLevel) {
 			if (!fwrite($this->hFileLog, '[' . date('Y-m-d H:i:s O') . '] ' . $sLevel . ' : ' . $sMessage . PHP_EOL)) {
-				throw new Exception("Can't Write in log file ....");
+				throw new \Exception("Can't Write in log file ....");
 			}
 		}
 	}
