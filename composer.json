@@ -1,9 +1,13 @@
 {
     "name": "thepozer/simple-log",
-    "description": "Simple dated log system to use with Slim FrameWork v3",
+    "description": "Simple dated log system to use with Slim FrameWork v4",
     "type": "library",
 	"homepage": "https://github.com/thepozer/simple-log",
     "license": "MIT",
+    "require": {
+        "php": "^7.2 || ^8.0",
+        "psr/log": "^1.0"
+    },
     "authors": [
         {
             "name": "Didier Prolhac",
