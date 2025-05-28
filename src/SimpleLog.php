@@ -41,20 +41,21 @@ class SimpleLog extends AbstractLogger {
      * Logs with an arbitrary level.
      *
      * @param mixed   $level
-     * @param string  $message
+     * @param string|\Stringable  $message
      * @param mixed[] $context
      *
      * @return void
      *
      * @throws \Psr\Log\InvalidArgumentException
      */
-    public function log($sLevel, $sMessage, array $arContext = array()) {
-        if (!isset($this->arLevels[$sLevel])) {
-            throw new \Psr\Log\InvalidArgumentException("Not defined Log level : '{$sLevel}' ....");
+
+    public function log($mLevel, string|\Stringable $sMessage, array $arContext = []): void {
+        if (!isset($this->arLevels[$mLevel])) {
+            throw new \Psr\Log\InvalidArgumentException("Not defined Log level : '{$mLevel}' ....");
         }
 
-        if ($this->arLevels[$sLevel] <= $this->iLogLevel) {
-            if (!fwrite($this->hFileLog, '[' . date('Y-m-d H:i:s O') . '] ' . $sLevel . ' : ' . $sMessage . PHP_EOL)) {
+        if ($this->arLevels[$mLevel] <= $this->iLogLevel) {
+            if (!fwrite($this->hFileLog, '[' . date('Y-m-d H:i:s O') . '] ' . $mLevel . ' : ' . $sMessage . PHP_EOL)) {
                 throw new \Exception("Can't Write in log file ....");
             }
         }
